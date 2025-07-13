@@ -1,0 +1,24 @@
+#include <SoftwareSerial.h>
+SoftwareSerial mySerial(14, 15); // RX, TX
+char p;
+String text = "";//PCに送る用テキスト
+void setup() {
+  Serial.begin(38400);
+  mySerial.begin(38400);
+  pinMode(25, OUTPUT);
+  digitalWrite(25, HIGH);
+}
+
+void loop() {
+  String text = "";
+  while(Serial.available()){//PCから情報が着たら無線で転送
+    mySerial.write(Serial.read());
+  }
+  while (mySerial.available()) {//銃から無線で情報が着たらPCに転送
+    p = mySerial.read();
+    text += String(p);
+  }
+  if(text != ""){
+    Serial.print(text);
+  }
+}

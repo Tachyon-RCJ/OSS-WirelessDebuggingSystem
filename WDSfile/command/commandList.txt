@@ -1,0 +1,12 @@
+Robot name > {name} -> Ro/name/{name}
+ロボットの名前変更(フラッシュメモリ内のroboName.txtを変更）
+Robot dckey > {key} -> Ro/dcky/{key}
+ロボット無線デバッグ用共通鍵の変更{key}に鍵を16進数で記入
+Robot rckey > {key} -> Ro/rcky/{key}
+ロボット間通信用共通鍵の変更{key}に鍵を16進数で記入
+play sound1 -> Ro/sod1/
+ロボットからぴぴっという音を鳴らす
+play famima -> Ro/sod2/
+ロボットからfamimaを鳴らす
+LED blue -> Le/bule/
+LEDを水色に
